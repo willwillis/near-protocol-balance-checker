@@ -1,6 +1,6 @@
 {
   "name": "near-balance-checker",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A simple, elegant web application for checking NEAR Protocol account balances. Fetches both liquid (available) and staked balances from NEAR mainnet.",
   "private": true,
   "scripts": {
