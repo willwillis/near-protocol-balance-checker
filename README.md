@@ -1,9 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NEAR Balance Checker
+
+A simple, elegant web application for checking NEAR Protocol account balances. This app fetches both liquid (available) and staked balances from the NEAR mainnet and displays the total balance for any `.near` account.
+
+## Features
+
+- **Balance Checking**: View available, staked, and total balance for any NEAR account
+- **Error Handling**: Comprehensive error handling with user-friendly messages including:
+  - Account validation
+  - Network error detection
+  - RPC provider failover handling
+  - Request timeout management (30 seconds)
+- **Accessibility**: Full ARIA support with screen reader compatibility
+- **Performance**: Optimized with request cancellation, parallel API calls, and proper cleanup
+- **NEAR Brand Compliant**: Designed according to [NEAR Brand Guidelines](https://pages.near.org/about/brand/)
+- **External Links**: Quick access to account details on:
+  - [Pikes Peak](https://pikespeak.ai) - Money Flow Explorer
+  - [NEAR Explorer](https://explorer.mainnet.near.org) - Official NEAR Explorer
+  - [NEAR Blocks](https://nearblocks.io) - Block Explorer
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org) 16.0.1 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Blockchain SDK**: [near-api-js](https://github.com/near/near-api-js) 6.5.0
+- **Font**: Geist (optimized via Next.js font optimization)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd near-balance-checker
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
@@ -14,23 +61,84 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+near-balance-checker/
+├── app/
+│   ├── page.tsx          # Main application component
+│   ├── layout.tsx         # Root layout with metadata
+│   └── globals.css        # Global styles with NEAR brand colors
+├── next.config.ts         # Next.js configuration (static export)
+├── package.json           # Dependencies and scripts
+└── README.md             # This file
+```
+
+## Configuration
+
+The app is configured to connect to NEAR mainnet with multiple RPC providers for failover:
+- `https://rpc.mainnet.near.org` (Primary)
+- `https://free.rpc.fastnear.com` (Failover)
+- `https://near.blockpi.network/v1/rpc/public` (Failover)
+
+## Build & Deploy
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+This creates a static export in the `out/` directory, ready for deployment to any static hosting service.
+
+### Deploy
+
+The easiest way to deploy is using [Vercel](https://vercel.com):
+
+```bash
+npm run build
+vercel
+```
+
+Or deploy the `out/` directory to any static hosting service:
+- GitHub Pages
+- Netlify
+- Cloudflare Pages
+- AWS S3 + CloudFront
+- Any static file host
+
+## NEAR Brand Compliance
+
+This application follows the [NEAR Brand Guidelines](https://pages.near.org/about/brand/):
+
+- **Colors**: Uses NEAR primary colors (Green #00ec97, Off White #f2f1e9, Black #000000)
+- **Typography**: Left-aligned text with proper spacing and font weights
+- **Design**: Clean, simple, and intuitive interface with generous whitespace
+- **Brand Voice**: Professional, confident, and optimistic
+
+## Technical Improvements
+
+This project includes several best practices and optimizations:
+
+- ✅ Request cancellation to prevent race conditions
+- ✅ Timeout handling (30 seconds) with proper cleanup
+- ✅ Parallel API calls for better performance
+- ✅ Comprehensive error handling with specific error messages
+- ✅ Full TypeScript type safety
+- ✅ Accessibility features (ARIA labels, live regions, semantic HTML)
+- ✅ Input validation with regex pattern matching
+- ✅ Performance optimizations (useCallback, proper cleanup)
+- ✅ Memory leak prevention (timeout cleanup, abort controllers)
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [NEAR Protocol Documentation](https://docs.near.org)
+- [near-api-js Documentation](https://docs.near.org/tools/near-api-js)
+- [NEAR Brand Guidelines](https://pages.near.org/about/brand/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open source and available under the MIT License.
