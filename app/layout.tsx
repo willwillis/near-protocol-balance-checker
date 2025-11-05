@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "NEAR Balance Checker",
-  description: "Add up staked and non-staked balance of a NEAR account",
+  description: "Check NEAR Protocol account balances including available and staked balances. Supports implicit addresses, named addresses (.near), and Ethereum-like addresses.",
   icons: {
     icon: '/favicon.ico',
   },

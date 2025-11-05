@@ -1,6 +1,6 @@
 # NEAR Balance Checker
 
-A simple, elegant web application for checking NEAR Protocol account balances. This app fetches both liquid (available) and staked balances from the NEAR mainnet and displays the total balance for any `.near` account.
+A simple, elegant web application for checking NEAR Protocol account balances. This app fetches both liquid (available) and staked balances from the NEAR mainnet and displays the total balance for any NEAR account (implicit addresses, named addresses like `.near`, or Ethereum-like addresses).
 
 ## Features
 
