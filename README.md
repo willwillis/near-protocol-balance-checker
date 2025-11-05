@@ -95,19 +95,18 @@ This creates a static export in the `out/` directory, ready for deployment to an
 
 ### Deploy
 
-The easiest way to deploy is using [Vercel](https://vercel.com):
+I deploy to a NameCrane shared hosting environment. It's cheap and reliable.
+You can support me by signing up with my [affiliate link](https://namecrane.com/r/196/).
 
-```bash
-npm run build
-vercel
-```
-
-Or deploy the `out/` directory to any static hosting service:
+All you do is copy the `out/` directory to any static hosting service:
+- [Name Crane](https://namecrane.com/r/196/)
 - GitHub Pages
 - Netlify
 - Cloudflare Pages
 - AWS S3 + CloudFront
 - Any static file host
+
+I hear you can deploy Next apps to [Vercel](https://vercel.com/) as well.
 
 ## NEAR Brand Compliance
 
