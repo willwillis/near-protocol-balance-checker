@@ -365,7 +365,7 @@ export default function HomePage() {
           );
         })()}
 
-        {/* Built on NEAR, TypeScript, and Next.js badges */}
+        {/* Built on NEAR, NameCrane, and Next.js badges */}
         <div className="mt-12 pt-8 border-t border-black/10">
           <div className="flex items-center justify-between">
             <a
@@ -381,14 +381,15 @@ export default function HomePage() {
               />
             </a>
             <a
-              href="https://www.typescriptlang.org"
+              href="https://namecrane.com/r/196/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block"
+              className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-black transition"
             >
+              <span>Deployed on</span>
               <img
-                src="/typescript-logo.png"
-                alt="TypeScript"
+                src="/name_crane.png"
+                alt="NameCrane"
                 className="h-6"
               />
             </a>
